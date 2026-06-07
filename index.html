@@ -6,11 +6,12 @@
 <title>Shuddhota (শুদ্ধতা)</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: Arial, sans-serif;
+font-family:Arial,sans-serif;
 }
 
 body{
@@ -19,8 +20,8 @@ color:#333;
 }
 
 header{
-background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
-url('https://images.unsplash.com/photo-1506617420156-8e4536971650');
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 height:100vh;
@@ -38,88 +39,147 @@ margin-bottom:15px;
 }
 
 .hero p{
-font-size:22px;
+font-size:24px;
 margin-bottom:25px;
 }
 
 .btn{
 display:inline-block;
-padding:12px 30px;
-background:#1B5E20;
+background:#2e7d32;
 color:white;
+padding:15px 35px;
+border-radius:8px;
 text-decoration:none;
-border-radius:30px;
+font-size:18px;
 font-weight:bold;
 }
 
-section{
-padding:70px 10%;
+.logo-section{
+text-align:center;
+padding:60px 20px;
+background:white;
 }
 
-.section-title{
-text-align:center;
-margin-bottom:40px;
-font-size:35px;
-color:#1B5E20;
+.logo-section img{
+width:220px;
+max-width:90%;
 }
 
 .about{
-background:white;
+padding:80px 20px;
+background:#ffffff;
+text-align:center;
+}
+
+.about h2{
+font-size:38px;
+margin-bottom:20px;
+color:#1b5e20;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
 }
 
 .products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
+padding:80px 20px;
 text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-.card h3{
-color:#1B5E20;
-margin-bottom:10px;
+.products h2{
+font-size:40px;
+margin-bottom:40px;
+color:#1b5e20;
 }
 
-.features{
+.product-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
-.feature{
+.product-card{
 background:white;
-padding:20px;
-border-radius:12px;
-text-align:center;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.product-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.product-card h3{
+margin:15px 0;
+color:#1b5e20;
+font-size:28px;
+}
+
+.product-card p{
+padding:0 15px 20px;
 }
 
 .contact{
-background:#1B5E20;
+padding:80px 20px;
+background:#1b5e20;
 color:white;
 text-align:center;
 }
 
+.contact h2{
+font-size:40px;
+margin-bottom:25px;
+}
+
+.contact p{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.contact a{
+color:#fff;
+text-decoration:none;
+}
+
 footer{
-background:#0f3d13;
+background:#111;
 color:white;
 text-align:center;
 padding:20px;
 }
 
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
 @media(max-width:768px){
+
 .hero h1{
 font-size:40px;
 }
+
 .hero p{
 font-size:18px;
 }
+
 }
+
 </style>
 </head>
 
@@ -128,82 +188,89 @@ font-size:18px;
 <header>
 <div class="hero">
 <h1>Shuddhota (শুদ্ধতা)</h1>
-<p>প্রকৃতির বিশুদ্ধতা, সুস্থ জীবনের অঙ্গীকার</p>
-<a href="#products" class="btn">পণ্য দেখুন</a>
+<p>খাঁটি খাবার, সুস্থ জীবন</p>
+<a href="#products" class="btn">আম দেখুন</a>
 </div>
 </header>
 
+<section class="logo-section">
+<img src="logo.png" alt="Shuddhota Logo">
+</section>
+
 <section class="about">
-<h2 class="section-title">আমাদের সম্পর্কে</h2>
-<p style="text-align:center;max-width:800px;margin:auto;">
-Shuddhota (শুদ্ধতা) বিশ্বস্ত উৎস থেকে সংগ্রহ করা খাঁটি ও প্রাকৃতিক খাদ্যপণ্য
-গ্রাহকদের কাছে পৌঁছে দিতে প্রতিশ্রুতিবদ্ধ।
+<h2>আমাদের সম্পর্কে</h2>
+
+<p>
+"শুদ্ধতা" হলো ন্যাচারাল ও অর্গানিক পণ্যের একটি বিশ্বস্ত প্রতিষ্ঠান।
+আমরা সরাসরি বাগান থেকে সংগ্রহকৃত খাঁটি ও নিরাপদ ফল দেশের
+বিভিন্ন প্রান্তে পৌঁছে দিচ্ছি। আমাদের লক্ষ্য হলো বিশুদ্ধ,
+নিরাপদ ও স্বাস্থ্যসম্মত খাদ্য মানুষের হাতে পৌঁছে দেওয়া।
 </p>
+
 </section>
 
-<section id="products">
-<h2 class="section-title">আমাদের পণ্য</h2>
+<section class="products" id="products">
 
-<div class="products">
+<h2>আমাদের আম</h2>
 
-<div class="card">
-<h3>খাঁটি মধু</h3>
-<p>প্রাকৃতিক ও বিশুদ্ধ মধু</p>
+<div class="product-grid">
+
+<div class="product-card">
+<img src="amrupali.jpg" alt="">
+<h3>আম্রপালি</h3>
+<p>
+মিষ্টি, সুগন্ধি এবং অত্যন্ত জনপ্রিয় প্রিমিয়াম আম।
+</p>
 </div>
 
-<div class="card">
-<h3>খেজুর</h3>
-<p>নির্বাচিত মানসম্পন্ন খেজুর</p>
+<div class="product-card">
+<img src="langra.webp" alt="">
+<h3>ল্যাংড়া</h3>
+<p>
+আঁশ কম, স্বাদে অতুলনীয় এবং অত্যন্ত রসালো।
+</p>
 </div>
 
-<div class="card">
-<h3>ঘি</h3>
-<p>খাঁটি দেশি ঘি</p>
-</div>
-
-<div class="card">
-<h3>কালোজিরা</h3>
-<p>উন্নতমানের কালোজিরা</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2 class="section-title">কেন শুদ্ধতা?</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>✓ বিশুদ্ধ পণ্য</h3>
-</div>
-
-<div class="feature">
-<h3>✓ বিশ্বস্ত উৎস</h3>
-</div>
-
-<div class="feature">
-<h3>✓ দ্রুত ডেলিভারি</h3>
-</div>
-
-<div class="feature">
-<h3>✓ গ্রাহক সন্তুষ্টি</h3>
+<div class="product-card">
+<img src="himsagar.jpg" alt="">
+<h3>হিমসাগর</h3>
+<p>
+আঁশবিহীন, সুগন্ধি ও বাংলাদেশের অন্যতম সেরা আম।
+</p>
 </div>
 
 </div>
+
 </section>
 
 <section class="contact">
-<h2>যোগাযোগ</h2>
-<br>
-<p>ফোন: 01608077140</p>
-<p>Facebook: Shuddhota (শুদ্ধতা)</p>
-<p>Email: info@shuddhota.com</p>
+
+<h2>যোগাযোগ করুন</h2>
+
+<p>📞 01608077140</p>
+
+<p>
+📘 Facebook:
+<a href="https://www.facebook.com/profile.php?id=61589384174630" target="_blank">
+Shuddhota Facebook Page
+</a>
+</p>
+
+<p>
+📧 Email: muktokuribd@gmail.com
+</p>
+
 </section>
 
 <footer>
+
 © 2026 Shuddhota (শুদ্ধতা) | All Rights Reserved
+
 </footer>
+
+<a class="whatsapp" href="https://wa.me/8801608077140" target="_blank">
+WhatsApp
+</a>
 
 </body>
 </html>
