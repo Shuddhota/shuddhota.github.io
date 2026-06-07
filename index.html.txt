@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shuddhota (শুদ্ধতা)</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, sans-serif;
+}
+
+body{
+background:#f8f8f8;
+color:#333;
+}
+
+header{
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url('https://images.unsplash.com/photo-1506617420156-8e4536971650');
+background-size:cover;
+background-position:center;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 30px;
+background:#1B5E20;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+section{
+padding:70px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:35px;
+color:#1B5E20;
+}
+
+.about{
+background:white;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h3{
+color:#1B5E20;
+margin-bottom:10px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature{
+background:white;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.contact{
+background:#1B5E20;
+color:white;
+text-align:center;
+}
+
+footer{
+background:#0f3d13;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:40px;
+}
+.hero p{
+font-size:18px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="hero">
+<h1>Shuddhota (শুদ্ধতা)</h1>
+<p>প্রকৃতির বিশুদ্ধতা, সুস্থ জীবনের অঙ্গীকার</p>
+<a href="#products" class="btn">পণ্য দেখুন</a>
+</div>
+</header>
+
+<section class="about">
+<h2 class="section-title">আমাদের সম্পর্কে</h2>
+<p style="text-align:center;max-width:800px;margin:auto;">
+Shuddhota (শুদ্ধতা) বিশ্বস্ত উৎস থেকে সংগ্রহ করা খাঁটি ও প্রাকৃতিক খাদ্যপণ্য
+গ্রাহকদের কাছে পৌঁছে দিতে প্রতিশ্রুতিবদ্ধ।
+</p>
+</section>
+
+<section id="products">
+<h2 class="section-title">আমাদের পণ্য</h2>
+
+<div class="products">
+
+<div class="card">
+<h3>খাঁটি মধু</h3>
+<p>প্রাকৃতিক ও বিশুদ্ধ মধু</p>
+</div>
+
+<div class="card">
+<h3>খেজুর</h3>
+<p>নির্বাচিত মানসম্পন্ন খেজুর</p>
+</div>
+
+<div class="card">
+<h3>ঘি</h3>
+<p>খাঁটি দেশি ঘি</p>
+</div>
+
+<div class="card">
+<h3>কালোজিরা</h3>
+<p>উন্নতমানের কালোজিরা</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2 class="section-title">কেন শুদ্ধতা?</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>✓ বিশুদ্ধ পণ্য</h3>
+</div>
+
+<div class="feature">
+<h3>✓ বিশ্বস্ত উৎস</h3>
+</div>
+
+<div class="feature">
+<h3>✓ দ্রুত ডেলিভারি</h3>
+</div>
+
+<div class="feature">
+<h3>✓ গ্রাহক সন্তুষ্টি</h3>
+</div>
+
+</div>
+</section>
+
+<section class="contact">
+<h2>যোগাযোগ</h2>
+<br>
+<p>ফোন: 01608077140</p>
+<p>Facebook: Shuddhota (শুদ্ধতা)</p>
+<p>Email: info@shuddhota.com</p>
+</section>
+
+<footer>
+© 2026 Shuddhota (শুদ্ধতা) | All Rights Reserved
+</footer>
+
+</body>
+</html>
