@@ -5,150 +5,176 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shuddhota (শুদ্ধতা)</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Hind Siliguri',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f8f8f8;
-color:#333;
+background:#f8faf8;
+color:#222;
 }
 
 header{
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1600&q=80');
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('banner.jpg');
 background-size:cover;
 background-position:center;
-height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 color:white;
 padding:20px;
 }
 
+.hero{
+max-width:900px;
+}
+
+.logo{
+width:180px;
+margin-bottom:20px;
+}
+
 .hero h1{
-font-size:60px;
-margin-bottom:15px;
+font-size:65px;
+font-weight:700;
 }
 
 .hero p{
 font-size:24px;
-margin-bottom:25px;
+margin:15px 0;
 }
 
 .btn{
 display:inline-block;
-background:#2e7d32;
+background:#0b8d3a;
 color:white;
 padding:15px 35px;
-border-radius:8px;
+border-radius:50px;
 text-decoration:none;
 font-size:18px;
 font-weight:bold;
+margin-top:10px;
+transition:.3s;
 }
 
-.logo-section{
-text-align:center;
-padding:60px 20px;
-background:white;
+.btn:hover{
+background:#06692b;
 }
 
-.logo-section img{
-width:220px;
-max-width:90%;
-}
-
-.about{
+section{
 padding:80px 20px;
-background:#ffffff;
-text-align:center;
-}
-
-.about h2{
-font-size:38px;
-margin-bottom:20px;
-color:#1b5e20;
-}
-
-.about p{
-max-width:900px;
-margin:auto;
-font-size:20px;
-line-height:1.8;
-}
-
-.products{
-padding:80px 20px;
-text-align:center;
-}
-
-.products h2{
-font-size:40px;
-margin-bottom:40px;
-color:#1b5e20;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
 max-width:1200px;
 margin:auto;
 }
 
-.product-card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:40px;
+color:#0b8d3a;
 }
 
-.product-card img{
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 }
 
-.product-card h3{
-margin:15px 0;
-color:#1b5e20;
-font-size:28px;
+.card h3{
+padding:15px;
+text-align:center;
 }
 
-.product-card p{
-padding:0 15px 20px;
+.about{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+line-height:1.9;
+font-size:18px;
+text-align:center;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.feature{
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.feature h3{
+margin-bottom:10px;
+color:#0b8d3a;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.review{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .contact{
-padding:80px 20px;
-background:#1b5e20;
+background:#0b8d3a;
 color:white;
 text-align:center;
+padding:80px 20px;
 }
 
 .contact h2{
 font-size:40px;
-margin-bottom:25px;
+margin-bottom:15px;
 }
 
 .contact p{
 font-size:22px;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
-.contact a{
-color:#fff;
-text-decoration:none;
-}
-
-footer{
+.footer{
 background:#111;
 color:white;
 text-align:center;
@@ -157,86 +183,162 @@ padding:20px;
 
 .whatsapp{
 position:fixed;
-bottom:20px;
 right:20px;
+bottom:20px;
 background:#25D366;
 color:white;
-padding:15px 20px;
-border-radius:50px;
+font-size:28px;
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
 text-decoration:none;
-font-weight:bold;
 box-shadow:0 5px 15px rgba(0,0,0,.3);
+z-index:999;
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 }
 
 .hero p{
 font-size:18px;
 }
 
+.logo{
+width:120px;
+}
+
+.section-title{
+font-size:32px;
+}
+
 }
 
 </style>
 </head>
-
 <body>
 
 <header>
+
 <div class="hero">
+
+<img src="logo.png" class="logo">
+
 <h1>Shuddhota (শুদ্ধতা)</h1>
+
 <p>খাঁটি খাবার, সুস্থ জীবন</p>
-<a href="#products" class="btn">আম দেখুন</a>
+
+<p>
+সরাসরি বাগান থেকে সংগ্রহকৃত আম, খাঁটি মধু, খেজুর ও প্রাকৃতিক খাদ্যপণ্য
+</p>
+
+<a href="https://wa.me/8801608077140" class="btn">
+WhatsApp অর্ডার করুন
+</a>
+
 </div>
+
 </header>
 
-<section class="logo-section">
-<img src="logo.png" alt="Shuddhota Logo">
-</section>
+<section>
 
-<section class="about">
-<h2>আমাদের সম্পর্কে</h2>
+<h2 class="section-title">কেন শুদ্ধতা?</h2>
 
-<p>
-"শুদ্ধতা" হলো ন্যাচারাল ও অর্গানিক পণ্যের একটি বিশ্বস্ত প্রতিষ্ঠান।
-আমরা সরাসরি বাগান থেকে সংগ্রহকৃত খাঁটি ও নিরাপদ ফল দেশের
-বিভিন্ন প্রান্তে পৌঁছে দিচ্ছি। আমাদের লক্ষ্য হলো বিশুদ্ধ,
-নিরাপদ ও স্বাস্থ্যসম্মত খাদ্য মানুষের হাতে পৌঁছে দেওয়া।
-</p>
+<div class="features">
 
-</section>
-
-<section class="products" id="products">
-
-<h2>আমাদের আম</h2>
-
-<div class="product-grid">
-
-<div class="product-card">
-<img src="amrupali.jpg" alt="">
-<h3>আম্রপালি</h3>
-<p>
-মিষ্টি, সুগন্ধি এবং অত্যন্ত জনপ্রিয় প্রিমিয়াম আম।
-</p>
+<div class="feature">
+<h3>১০০% প্রাকৃতিক</h3>
+<p>কোনো ক্ষতিকর কেমিক্যাল ছাড়াই সংগ্রহ করা হয়।</p>
 </div>
 
-<div class="product-card">
-<img src="langra.webp" alt="">
-<h3>ল্যাংড়া</h3>
-<p>
-আঁশ কম, স্বাদে অতুলনীয় এবং অত্যন্ত রসালো।
-</p>
+<div class="feature">
+<h3>সরাসরি বাগান থেকে</h3>
+<p>মধ্যস্বত্বভোগী ছাড়াই কৃষকের কাছ থেকে সংগ্রহ।</p>
 </div>
 
-<div class="product-card">
-<img src="himsagar.jpg" alt="">
-<h3>হিমসাগর</h3>
-<p>
-আঁশবিহীন, সুগন্ধি ও বাংলাদেশের অন্যতম সেরা আম।
-</p>
+<div class="feature">
+<h3>সারা বাংলাদেশ ডেলিভারি</h3>
+<p>নিরাপদ প্যাকেজিংসহ দ্রুত ডেলিভারি।</p>
+</div>
+
+<div class="feature">
+<h3>বিশ্বস্ত সেবা</h3>
+<p>গ্রাহক সন্তুষ্টিই আমাদের প্রধান লক্ষ্য।</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">আমাদের জনপ্রিয় পণ্য</h2>
+
+<div class="products">
+
+<div class="card">
+<img src="himsagor.jpg">
+<h3>হিমসাগর আম</h3>
+</div>
+
+<div class="card">
+<img src="langra.jpg">
+<h3>ল্যাংড়া আম</h3>
+</div>
+
+<div class="card">
+<img src="khirsapat.jpg">
+<h3>খিরসাপাত আম</h3>
+</div>
+
+<div class="card">
+<img src="honey.jpg">
+<h3>খাঁটি মধু</h3>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">আমাদের সম্পর্কে</h2>
+
+<div class="about">
+
+শুদ্ধতা (Shuddhota) একটি বিশ্বস্ত অনলাইন খাদ্যপণ্য সরবরাহকারী প্রতিষ্ঠান।
+আমরা সরাসরি উৎপাদক ও কৃষকের কাছ থেকে সংগ্রহ করা আম, মধু, খেজুর ও অন্যান্য প্রাকৃতিক খাদ্যপণ্য সারা বাংলাদেশে সরবরাহ করে থাকি।
+
+আমাদের লক্ষ্য হলো প্রতিটি পরিবারের কাছে নিরাপদ, স্বাস্থ্যকর ও ভেজালমুক্ত খাদ্য পৌঁছে দেওয়া।
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">গ্রাহকদের মতামত</h2>
+
+<div class="review-grid">
+
+<div class="review">
+★★★★★<br><br>
+"আমের মান খুব ভালো ছিল। সময়মতো ডেলিভারি পেয়েছি।"
+</div>
+
+<div class="review">
+★★★★★<br><br>
+"মধুর স্বাদ ও গুণগত মান অসাধারণ। আবার অর্ডার করবো।"
+</div>
+
+<div class="review">
+★★★★★<br><br>
+"প্যাকেজিং ও সার্ভিস দুইটাই দারুণ ছিল।"
 </div>
 
 </div>
@@ -249,27 +351,25 @@ font-size:18px;
 
 <p>📞 01608077140</p>
 
-<p>
-📘 Facebook:
-<a href="https://www.facebook.com/profile.php?id=61589384174630" target="_blank">
-Shuddhota Facebook Page
-</a>
-</p>
+<p>📍 সারা বাংলাদেশে ডেলিভারি</p>
 
-<p>
-📧 Email: muktokuribd@gmail.com
-</p>
+<br>
+
+<a href="https://www.facebook.com/profile.php?id=61589384174630" class="btn">
+Facebook Page
+</a>
 
 </section>
 
-<footer>
+<div class="footer">
 
 © 2026 Shuddhota (শুদ্ধতা) | All Rights Reserved
 
-</footer>
+</div>
 
-<a class="whatsapp" href="https://wa.me/8801608077140" target="_blank">
-WhatsApp
+<a class="whatsapp"
+href="https://wa.me/8801608077140">
+☎
 </a>
 
 </body>
