@@ -1,28 +1,26 @@
-from pathlib import Path
-
-html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shuddhota (শুদ্ধতা)</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f8f8f8;color:#333}
-html{scroll-behavior:smooth}
 
-nav{
-position:fixed;top:0;left:0;width:100%;
-background:rgba(0,0,0,.75);
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 30px;z-index:1000;
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-nav .logo{color:#fff;font-size:24px;font-weight:bold}
-nav ul{display:flex;list-style:none;gap:20px}
-nav a{color:#fff;text-decoration:none;font-weight:bold}
+
+body{
+background:#f8f8f8;
+color:#333;
+}
 
 header{
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
@@ -31,52 +29,72 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:#fff;
+color:white;
 padding:20px;
 }
 
-.hero h1{font-size:60px;margin-bottom:15px}
-.hero p{font-size:24px;margin-bottom:25px;max-width:800px}
+.hero h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:24px;
+margin-bottom:25px;
+}
 
 .btn{
 display:inline-block;
 background:#2e7d32;
-color:#fff;
+color:white;
 padding:15px 35px;
 border-radius:8px;
 text-decoration:none;
+font-size:18px;
 font-weight:bold;
 }
 
-.logo-section,.about,.products,.trust,.contact{padding:80px 20px}
-.logo-section{text-align:center;background:#fff}
-.logo-section img{width:220px;max-width:90%}
-
-.about{text-align:center;background:#fff}
-.about h2,.products h2,.trust h2,.contact h2{
-font-size:40px;margin-bottom:25px;color:#1b5e20
+.logo-section{
+text-align:center;
+padding:60px 20px;
+background:white;
 }
+
+.logo-section img{
+width:220px;
+max-width:90%;
+}
+
+.about{
+padding:80px 20px;
+background:#ffffff;
+text-align:center;
+}
+
+.about h2{
+font-size:38px;
+margin-bottom:20px;
+color:#1b5e20;
+}
+
 .about p{
-max-width:900px;margin:auto;font-size:20px;line-height:1.8
-}
-
-.trust{background:#f1f8e9;text-align:center}
-.trust-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-max-width:1100px;
+max-width:900px;
 margin:auto;
-}
-.trust-box{
-background:#fff;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-font-weight:bold;
+font-size:20px;
+line-height:1.8;
 }
 
-.products{text-align:center}
+.products{
+padding:80px 20px;
+text-align:center;
+}
+
+.products h2{
+font-size:40px;
+margin-bottom:40px;
+color:#1b5e20;
+}
+
 .product-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -86,39 +104,55 @@ margin:auto;
 }
 
 .product-card{
-background:#fff;
+background:white;
 border-radius:15px;
 overflow:hidden;
 box-shadow:0 5px 20px rgba(0,0,0,.1);
-transition:.4s;
 }
-.product-card:hover{transform:translateY(-10px)}
+
 .product-card img{
 width:100%;
 height:250px;
 object-fit:cover;
 }
+
 .product-card h3{
 margin:15px 0;
 color:#1b5e20;
 font-size:28px;
 }
-.product-card p{padding:0 15px 20px}
+
+.product-card p{
+padding:0 15px 20px;
+}
 
 .contact{
+padding:80px 20px;
 background:#1b5e20;
-color:#fff;
+color:white;
 text-align:center;
 }
-.contact h2{color:#fff}
-.contact p{font-size:22px;margin-bottom:12px}
-.contact a{color:#fff;text-decoration:none}
+
+.contact h2{
+font-size:40px;
+margin-bottom:25px;
+}
+
+.contact p{
+font-size:22px;
+margin-bottom:12px;
+}
+
+.contact a{
+color:#fff;
+text-decoration:none;
+}
 
 footer{
 background:#111;
-color:#fff;
+color:white;
 text-align:center;
-padding:25px;
+padding:20px;
 }
 
 .whatsapp{
@@ -126,108 +160,117 @@ position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-color:#fff;
+color:white;
 padding:15px 20px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
 @media(max-width:768px){
-nav{padding:12px 15px;flex-direction:column;gap:10px}
-nav ul{gap:10px}
-.hero h1{font-size:38px}
-.hero p{font-size:18px}
+
+.hero h1{
+font-size:40px;
 }
+
+.hero p{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
-<body>
 
-<nav>
-<div class="logo">Shuddhota</div>
-<ul>
-<li><a href="#about">আমাদের সম্পর্কে</a></li>
-<li><a href="#products">আম</a></li>
-<li><a href="#contact">যোগাযোগ</a></li>
-</ul>
-</nav>
+<body>
 
 <header>
 <div class="hero">
 <h1>Shuddhota (শুদ্ধতা)</h1>
-<p>রাজশাহীর বাগান থেকে সরাসরি আপনার ঘরে — নিরাপদ, প্রাকৃতিক ও খাঁটি আম</p>
-<a href="#products" class="btn">আমাদের পণ্য দেখুন</a>
+<p>খাঁটি খাবার, সুস্থ জীবন</p>
+<a href="#products" class="btn">আম দেখুন</a>
 </div>
 </header>
 
 <section class="logo-section">
-<h2>আপনার লোগো এখানে</h2>
-<p>পরে logo.png বসিয়ে দিতে পারবেন</p>
+<img src="logo.png" alt="Shuddhota Logo">
 </section>
 
-<section class="about" id="about">
+<section class="about">
 <h2>আমাদের সম্পর্কে</h2>
-<p>
-শুদ্ধতা হলো ন্যাচারাল ও অর্গানিক পণ্যের একটি বিশ্বস্ত প্রতিষ্ঠান।
-আমরা সরাসরি বাগান থেকে সংগ্রহকৃত খাঁটি ও নিরাপদ ফল দেশের বিভিন্ন প্রান্তে পৌঁছে দিচ্ছি।
-আমাদের লক্ষ্য হলো বিশুদ্ধ, নিরাপদ ও স্বাস্থ্যসম্মত খাদ্য মানুষের হাতে পৌঁছে দেওয়া।
-</p>
-</section>
 
-<section class="trust">
-<h2>কেন শুদ্ধতা?</h2>
-<div class="trust-grid">
-<div class="trust-box">✅ সরাসরি বাগান থেকে সংগ্রহ</div>
-<div class="trust-box">✅ কার্বাইড মুক্ত আম</div>
-<div class="trust-box">✅ নিরাপদ প্যাকেজিং</div>
-<div class="trust-box">✅ সারা দেশে ডেলিভারি</div>
-</div>
+<p>
+"শুদ্ধতা" হলো ন্যাচারাল ও অর্গানিক পণ্যের একটি বিশ্বস্ত প্রতিষ্ঠান।
+আমরা সরাসরি বাগান থেকে সংগ্রহকৃত খাঁটি ও নিরাপদ ফল দেশের
+বিভিন্ন প্রান্তে পৌঁছে দিচ্ছি। আমাদের লক্ষ্য হলো বিশুদ্ধ,
+নিরাপদ ও স্বাস্থ্যসম্মত খাদ্য মানুষের হাতে পৌঁছে দেওয়া।
+</p>
+
 </section>
 
 <section class="products" id="products">
+
 <h2>আমাদের আম</h2>
 
 <div class="product-grid">
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80">
+<img src="Amrupali.jpg" alt="">
 <h3>আম্রপালি</h3>
-<p>মিষ্টি, সুগন্ধি এবং অত্যন্ত জনপ্রিয় প্রিমিয়াম আম।</p>
+<p>
+মিষ্টি, সুগন্ধি এবং অত্যন্ত জনপ্রিয় প্রিমিয়াম আম।
+</p>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?auto=format&fit=crop&w=800&q=80">
+<img src="lengra.jpg" alt="">
 <h3>ল্যাংড়া</h3>
-<p>আঁশ কম, স্বাদে অতুলনীয় এবং অত্যন্ত রসালো।</p>
+<p>
+আঁশ কম, স্বাদে অতুলনীয় এবং অত্যন্ত রসালো।
+</p>
 </div>
 
 <div class="product-card">
-<img src="https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&w=800&q=80">
+<img src="Himsagor.jpg" alt="">
 <h3>হিমসাগর</h3>
-<p>আঁশবিহীন, সুগন্ধি ও জনপ্রিয় আমের একটি জাত।</p>
+<p>
+আঁশবিহীন, সুগন্ধি ও বাংলাদেশের অন্যতম সেরা আম।
+</p>
 </div>
 
 </div>
+
 </section>
 
-<section class="contact" id="contact">
+<section class="contact">
+
 <h2>যোগাযোগ করুন</h2>
+
 <p>📞 01608077140</p>
-<p>📧 Email: muktokuribd@gmail.com</p>
-<p>Facebook: https://www.facebook.com/profile.php?id=61589384174630</p>
+
+<p>
+📘 Facebook:
+<a href="https://www.facebook.com/profile.php?id=61589384174630" target="_blank">
+Shuddhota Facebook Page
+</a>
+</p>
+
+<p>
+📧 Email: muktokuribd@gmail.com
+</p>
+
 </section>
 
 <footer>
-<h3>Shuddhota (শুদ্ধতা)</h3>
-<p>খাঁটি খাবার, সুস্থ জীবন</p>
-<p>Rajshahi, Bangladesh</p>
+
+© 2026 Shuddhota (শুদ্ধতা) | All Rights Reserved
+
 </footer>
 
-<a class="whatsapp" href="https://wa.me/8801608077140" target="_blank">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/8801608077140" target="_blank">
+WhatsApp
+</a>
 
 </body>
-</html>"""
-
-path = "/mnt/data/Shuddhota_Premium_Index.html"
-Path(path).write_text(html, encoding="utf-8")
-print(path)
+</html>
