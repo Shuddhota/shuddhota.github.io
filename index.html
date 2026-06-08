@@ -1,376 +1,233 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+html = """<!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shuddhota (শুদ্ধতা)</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f8f8f8;color:#333}
+html{scroll-behavior:smooth}
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Hind Siliguri',sans-serif;
-scroll-behavior:smooth;
+nav{
+position:fixed;top:0;left:0;width:100%;
+background:rgba(0,0,0,.75);
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 30px;z-index:1000;
 }
-
-body{
-background:#f8faf8;
-color:#222;
-}
+nav .logo{color:#fff;font-size:24px;font-weight:bold}
+nav ul{display:flex;list-style:none;gap:20px}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
 
 header{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url('banner.jpg');
+background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1519996529931-28324d5a630e?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
+height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-color:white;
+color:#fff;
 padding:20px;
 }
 
-.hero{
-max-width:900px;
-}
-
-.logo{
-width:180px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:65px;
-font-weight:700;
-}
-
-.hero p{
-font-size:24px;
-margin:15px 0;
-}
+.hero h1{font-size:60px;margin-bottom:15px}
+.hero p{font-size:24px;margin-bottom:25px;max-width:800px}
 
 .btn{
 display:inline-block;
-background:#0b8d3a;
-color:white;
+background:#2e7d32;
+color:#fff;
 padding:15px 35px;
-border-radius:50px;
+border-radius:8px;
 text-decoration:none;
-font-size:18px;
 font-weight:bold;
-margin-top:10px;
-transition:.3s;
 }
 
-.btn:hover{
-background:#06692b;
+.logo-section,.about,.products,.trust,.contact{padding:80px 20px}
+.logo-section{text-align:center;background:#fff}
+.logo-section img{width:220px;max-width:90%}
+
+.about{text-align:center;background:#fff}
+.about h2,.products h2,.trust h2,.contact h2{
+font-size:40px;margin-bottom:25px;color:#1b5e20
+}
+.about p{
+max-width:900px;margin:auto;font-size:20px;line-height:1.8
 }
 
-section{
-padding:80px 20px;
+.trust{background:#f1f8e9;text-align:center}
+.trust-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+.trust-box{
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+font-weight:bold;
+}
+
+.products{text-align:center}
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 max-width:1200px;
 margin:auto;
 }
 
-.section-title{
-text-align:center;
-font-size:42px;
-margin-bottom:40px;
-color:#0b8d3a;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-border-radius:18px;
+.product-card{
+background:#fff;
+border-radius:15px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.3s;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+transition:.4s;
 }
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card img{
+.product-card:hover{transform:translateY(-10px)}
+.product-card img{
 width:100%;
-height:260px;
+height:250px;
 object-fit:cover;
 }
-
-.card h3{
-padding:15px;
-text-align:center;
+.product-card h3{
+margin:15px 0;
+color:#1b5e20;
+font-size:28px;
 }
-
-.about{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-line-height:1.9;
-font-size:18px;
-text-align:center;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-
-.feature{
-background:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.feature h3{
-margin-bottom:10px;
-color:#0b8d3a;
-}
-
-.review-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.review{
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
+.product-card p{padding:0 15px 20px}
 
 .contact{
-background:#0b8d3a;
-color:white;
+background:#1b5e20;
+color:#fff;
 text-align:center;
-padding:80px 20px;
 }
+.contact h2{color:#fff}
+.contact p{font-size:22px;margin-bottom:12px}
+.contact a{color:#fff;text-decoration:none}
 
-.contact h2{
-font-size:40px;
-margin-bottom:15px;
-}
-
-.contact p{
-font-size:22px;
-margin-bottom:10px;
-}
-
-.footer{
+footer{
 background:#111;
-color:white;
+color:#fff;
 text-align:center;
-padding:20px;
+padding:25px;
 }
 
 .whatsapp{
 position:fixed;
-right:20px;
 bottom:20px;
+right:20px;
 background:#25D366;
-color:white;
-font-size:28px;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
+color:#fff;
+padding:15px 20px;
+border-radius:50px;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-z-index:999;
+font-weight:bold;
 }
 
 @media(max-width:768px){
-
-.hero h1{
-font-size:42px;
+nav{padding:12px 15px;flex-direction:column;gap:10px}
+nav ul{gap:10px}
+.hero h1{font-size:38px}
+.hero p{font-size:18px}
 }
-
-.hero p{
-font-size:18px;
-}
-
-.logo{
-width:120px;
-}
-
-.section-title{
-font-size:32px;
-}
-
-}
-
 </style>
 </head>
 <body>
 
+<nav>
+<div class="logo">Shuddhota</div>
+<ul>
+<li><a href="#about">আমাদের সম্পর্কে</a></li>
+<li><a href="#products">আম</a></li>
+<li><a href="#contact">যোগাযোগ</a></li>
+</ul>
+</nav>
+
 <header>
-
 <div class="hero">
-
-<img src="logo.png" class="logo">
-
 <h1>Shuddhota (শুদ্ধতা)</h1>
-
-<p>খাঁটি খাবার, সুস্থ জীবন</p>
-
-<p>
-সরাসরি বাগান থেকে সংগ্রহকৃত আম, খাঁটি মধু, খেজুর ও প্রাকৃতিক খাদ্যপণ্য
-</p>
-
-<a href="https://wa.me/8801608077140" class="btn">
-WhatsApp অর্ডার করুন
-</a>
-
+<p>রাজশাহীর বাগান থেকে সরাসরি আপনার ঘরে — নিরাপদ, প্রাকৃতিক ও খাঁটি আম</p>
+<a href="#products" class="btn">আমাদের পণ্য দেখুন</a>
 </div>
-
 </header>
 
-<section>
-
-<h2 class="section-title">কেন শুদ্ধতা?</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>১০০% প্রাকৃতিক</h3>
-<p>কোনো ক্ষতিকর কেমিক্যাল ছাড়াই সংগ্রহ করা হয়।</p>
-</div>
-
-<div class="feature">
-<h3>সরাসরি বাগান থেকে</h3>
-<p>মধ্যস্বত্বভোগী ছাড়াই কৃষকের কাছ থেকে সংগ্রহ।</p>
-</div>
-
-<div class="feature">
-<h3>সারা বাংলাদেশ ডেলিভারি</h3>
-<p>নিরাপদ প্যাকেজিংসহ দ্রুত ডেলিভারি।</p>
-</div>
-
-<div class="feature">
-<h3>বিশ্বস্ত সেবা</h3>
-<p>গ্রাহক সন্তুষ্টিই আমাদের প্রধান লক্ষ্য।</p>
-</div>
-
-</div>
-
+<section class="logo-section">
+<h2>আপনার লোগো এখানে</h2>
+<p>পরে logo.png বসিয়ে দিতে পারবেন</p>
 </section>
 
-<section>
-
-<h2 class="section-title">আমাদের জনপ্রিয় পণ্য</h2>
-
-<div class="products">
-
-<div class="card">
-<img src="himsagor.jpg">
-<h3>হিমসাগর আম</h3>
-</div>
-
-<div class="card">
-<img src="langra.jpg">
-<h3>ল্যাংড়া আম</h3>
-</div>
-
-<div class="card">
-<img src="khirsapat.jpg">
-<h3>খিরসাপাত আম</h3>
-</div>
-
-<div class="card">
-<img src="honey.jpg">
-<h3>খাঁটি মধু</h3>
-</div>
-
-</div>
-
+<section class="about" id="about">
+<h2>আমাদের সম্পর্কে</h2>
+<p>
+শুদ্ধতা হলো ন্যাচারাল ও অর্গানিক পণ্যের একটি বিশ্বস্ত প্রতিষ্ঠান।
+আমরা সরাসরি বাগান থেকে সংগ্রহকৃত খাঁটি ও নিরাপদ ফল দেশের বিভিন্ন প্রান্তে পৌঁছে দিচ্ছি।
+আমাদের লক্ষ্য হলো বিশুদ্ধ, নিরাপদ ও স্বাস্থ্যসম্মত খাদ্য মানুষের হাতে পৌঁছে দেওয়া।
+</p>
 </section>
 
-<section>
-
-<h2 class="section-title">আমাদের সম্পর্কে</h2>
-
-<div class="about">
-
-শুদ্ধতা (Shuddhota) একটি বিশ্বস্ত অনলাইন খাদ্যপণ্য সরবরাহকারী প্রতিষ্ঠান।
-আমরা সরাসরি উৎপাদক ও কৃষকের কাছ থেকে সংগ্রহ করা আম, মধু, খেজুর ও অন্যান্য প্রাকৃতিক খাদ্যপণ্য সারা বাংলাদেশে সরবরাহ করে থাকি।
-
-আমাদের লক্ষ্য হলো প্রতিটি পরিবারের কাছে নিরাপদ, স্বাস্থ্যকর ও ভেজালমুক্ত খাদ্য পৌঁছে দেওয়া।
-
+<section class="trust">
+<h2>কেন শুদ্ধতা?</h2>
+<div class="trust-grid">
+<div class="trust-box">✅ সরাসরি বাগান থেকে সংগ্রহ</div>
+<div class="trust-box">✅ কার্বাইড মুক্ত আম</div>
+<div class="trust-box">✅ নিরাপদ প্যাকেজিং</div>
+<div class="trust-box">✅ সারা দেশে ডেলিভারি</div>
 </div>
-
 </section>
 
-<section>
+<section class="products" id="products">
+<h2>আমাদের আম</h2>
 
-<h2 class="section-title">গ্রাহকদের মতামত</h2>
+<div class="product-grid">
 
-<div class="review-grid">
-
-<div class="review">
-★★★★★<br><br>
-"আমের মান খুব ভালো ছিল। সময়মতো ডেলিভারি পেয়েছি।"
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80">
+<h3>আম্রপালি</h3>
+<p>মিষ্টি, সুগন্ধি এবং অত্যন্ত জনপ্রিয় প্রিমিয়াম আম।</p>
 </div>
 
-<div class="review">
-★★★★★<br><br>
-"মধুর স্বাদ ও গুণগত মান অসাধারণ। আবার অর্ডার করবো।"
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1591073113125-e46713c829ed?auto=format&fit=crop&w=800&q=80">
+<h3>ল্যাংড়া</h3>
+<p>আঁশ কম, স্বাদে অতুলনীয় এবং অত্যন্ত রসালো।</p>
 </div>
 
-<div class="review">
-★★★★★<br><br>
-"প্যাকেজিং ও সার্ভিস দুইটাই দারুণ ছিল।"
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1605027990121-cbae9e0642df?auto=format&fit=crop&w=800&q=80">
+<h3>হিমসাগর</h3>
+<p>আঁশবিহীন, সুগন্ধি ও জনপ্রিয় আমের একটি জাত।</p>
 </div>
 
 </div>
-
 </section>
 
-<section class="contact">
-
+<section class="contact" id="contact">
 <h2>যোগাযোগ করুন</h2>
-
 <p>📞 01608077140</p>
-
-<p>📍 সারা বাংলাদেশে ডেলিভারি</p>
-
-<br>
-
-<a href="https://www.facebook.com/profile.php?id=61589384174630" class="btn">
-Facebook Page
-</a>
-
+<p>📧 Email: muktokuribd@gmail.com</p>
+<p>Facebook: https://www.facebook.com/profile.php?id=61589384174630</p>
 </section>
 
-<div class="footer">
+<footer>
+<h3>Shuddhota (শুদ্ধতা)</h3>
+<p>খাঁটি খাবার, সুস্থ জীবন</p>
+<p>Rajshahi, Bangladesh</p>
+</footer>
 
-© 2026 Shuddhota (শুদ্ধতা) | All Rights Reserved
-
-</div>
-
-<a class="whatsapp"
-href="https://wa.me/8801608077140">
-☎
-</a>
+<a class="whatsapp" href="https://wa.me/8801608077140" target="_blank">WhatsApp</a>
 
 </body>
-</html>
+</html>"""
+
+path = "/mnt/data/Shuddhota_Premium_Index.html"
+Path(path).write_text(html, encoding="utf-8")
+print(path)
